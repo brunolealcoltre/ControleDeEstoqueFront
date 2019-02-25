@@ -1,0 +1,57 @@
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<div class="container">
+    <h1>Vendas</h1>
+
+    <form>
+
+        <div class="form-Vendas">
+
+            <label for="formGroupExampleInput">Nome do Produto</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+
+            <label for="formGroupExampleInput">Quantidade</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+
+        </div>
+
+        <div class="btn">
+            <button type="button" class="btn btn-outline-secondary">Efetuar Compra</button>
+        </div>
+
+    </form>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form class="form-inline form-filtro">
+
+                    <div class="form-group">
+                        <label class="sr-only" for="filtro-tipo">Nome do Produto</label>
+                        <select class="form-control" id="filtro-tipo">
+                            <option value="">Nome do Produto</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="sr-only" for="filtro-conta">Quantidade</label>
+                        <select class="form-control" id="filtro-conta">
+                            <option value="">Quantidade</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Filtrar</button>
+                        <button type="reset" class="btn btn-default">Limpar</button>
+                    </div>
+
+                </form>
+
+                <div class="btn-Home">
+                    <button type="button" [routerLink]="['/telaInicia']" class="btn btn-outline-secondary">Home</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

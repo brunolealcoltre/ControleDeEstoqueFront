@@ -1,0 +1,28 @@
+<div class="container">
+  <h1 id="titulo">Altere o seu Fabricante </h1>
+  
+  <form #newFabricante="ngForm">
+    <div class="form-fabricante">
+
+      <label for="formGroupExampleInput">Nome do Fabricante </label>
+      <input type="text" #name="ngModel"[(ngModel)]="model.nomeFabricante" name="nome" class="form-control" required placeholder="Informe fabricante">
+      <p></p>
+    </div>
+    <button type="submit" class="btn btn-outline-secondary" (click)="updateActive(item)">Alterar</button>
+  </form>
+
+
+  <div class="tabelaFabricante">
+    <tbody>
+      <tr *ngFor="let item of fabricante">
+        <th scope="row">{{item.codigo}} </th>
+        <td>{{item.nomeFabricante}} </td>
+        <!--<button type="button" [routerLink]="['/telaAlterar']"class="btn btn-secondary"(click)="updateFabricante(item.codigo)">Alterar</button>-->
+      </tr>
+    </tbody>
+    <p></p>
+    <div class="btn-Home">
+      <button type="button" [routerLink]="['/telaInicia']" class="btn btn-outline-secondary">Home</button>
+    </div>
+  </div>
+</div>

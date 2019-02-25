@@ -1,0 +1,62 @@
+<div class="container">
+    <h1>Altere o seu produto</h1>
+    <!-- {{model.produto}} -->
+    <form (ngSubmit)="save()" #newProduto="ngForm">
+        <div class="form-produto">
+
+            <label for="formGroupExampleInput">Nome do produto</label>
+            <input type="text" name="nome" #name="ngModel" [(ngModel)]="model.nomeProduto" class="form-control" id="formGroupExampleInput"
+                required placeholder="Example input">
+
+            <label for="formGroupExampleInput">Preço: </label>
+            <!--{{model.preco}}-->
+            <input type="text" name="nome" name="ngModel" [(ngModel)]="model.preco" class="form-control" id="formGroupExampleInput"
+                placeholder="Example input">
+
+            <label for="formGroupExampleInput">Quantidade: </label>
+            <!--{{model.quantidade}}-->
+            <input type="text" name="nome" name="ngModel" [(ngModel)]="model.quantidade" class="form-control" id="formGroupExampleInput"
+                placeholder="Example input">
+
+
+            <p></p>
+            <select class="form-control form-control-sm" ngfor="let item of fabricante">
+                {{item.produto.Fabricante}}
+                <option value="">Selecione um fabricante</option>
+            </select>
+
+        </div>
+        <div class="btn-cadastrar-prod">
+            <button type="button" class="btn btn-outline-secondary">Cadastrar</button>
+        </div>
+    </form>
+
+    <div class="tabelaFabricante">
+        <table class="table table-sm table-dark">
+            <tr>
+                <th scope="col">Codigo</th>
+                <th scope="col">Nome do Produto</th>
+                <th scope="col">Preço</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Fabricante</th>
+                <th scope="col">Ações</th>
+            </tr>
+            <tbody>
+                <tr *ngFor="let item of produto">
+                    <th scope="row">{{item.codigo}}</th>
+                    <td>{{item.nomeProduto}}</td>
+                    <td>{{item.preco}}</td>
+                    <td>{{item.quantidade}}</td>
+                    <td>{{item.fabricante.nomeFabricante}}</td>
+                    <button type="button" routerLink="/telaAlteraProd/{{item.codigo}}" class="btn btn-secondary">Alterar</button>
+                    <button type="button" class="btn btn-secondary" (click)=deleteProduto(item.codigo)>Excluir</button>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="btn-Home">
+            <button type="button" [routerLink]="['/telaInicia']" class="btn btn-outline-secondary">Home</button>
+        </div>
+
+    </div>
+</div>
